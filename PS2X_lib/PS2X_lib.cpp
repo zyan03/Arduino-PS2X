@@ -181,7 +181,8 @@ byte PS2X::config_gamepad(uint8_t clk, uint8_t cmd, uint8_t att, uint8_t dat, bo
   _dat_mask = digitalPinToBitMask(dat);
   _dat_ireg = portInputRegister(digitalPinToPort(dat));
 #else
-#ifdef ESP8266
+// #ifdef ESP8266
+#if defined(ESP8266) || defined(ARDUINO_UNOR4_WIFI)
   _clk_pin = clk;
   _cmd_pin = cmd;
   _att_pin = att;
@@ -211,7 +212,7 @@ byte PS2X::config_gamepad(uint8_t clk, uint8_t cmd, uint8_t att, uint8_t dat, bo
   pinMode(clk, OUTPUT); //configure ports
   pinMode(att, OUTPUT);
   pinMode(cmd, OUTPUT);
-#ifdef ESP8266
+#if defined(ESP8266) || defined(ARDUINO_UNOR4_WIFI)
   pinMode(dat, INPUT_PULLUP); // enable pull-up
 #else
   pinMode(dat, INPUT);

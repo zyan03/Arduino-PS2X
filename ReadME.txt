@@ -57,7 +57,11 @@
 *	Reorganized directory so examples show up in Arduino IDE menu
 *    1.8
 *	Added Arduino 1.0 compatibility. 
-*
+*    1.9
+*       Kurt - Added detection and recovery from dropping from analog mode, plus
+*       integrated Chipkit (pic32mx...) support
+*    1.10
+*        zyan03 - Add Arduino UNO R4 WIFI support
 *
 *This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or(at your option) any later version.
 This program is distributed in the hope that it will be useful,

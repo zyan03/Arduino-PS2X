@@ -60,7 +60,8 @@
 *    1.9
 *       Kurt - Added detection and recovery from dropping from analog mode, plus
 *       integrated Chipkit (pic32mx...) support
-*
+*    1.10
+*       zyan03 - Add Arduino UNO R4 WIFI support
 *
 *
 *This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or(at your option) any later version.
@@ -95,7 +96,7 @@ GNU General Public License for more details.
   #define CTRL_CLK        4
   #define CTRL_BYTE_DELAY 3
 #else
-#ifdef ESP8266
+#if defined(ESP8266) || defined(ARDUINO_UNOR4_WIFI)
   #define CTRL_CLK        5
   #define CTRL_CLK_HIGH   5
   #define CTRL_BYTE_DELAY 18
@@ -217,7 +218,7 @@ class PS2X {
       uint8_t _dat_mask; 
       volatile uint8_t *_dat_ireg;
     #else
-    #ifdef ESP8266
+    #if defined(ESP8266) || defined(ARDUINO_UNOR4_WIFI)
       int _clk_pin;
       int _cmd_pin;
       int _att_pin;
